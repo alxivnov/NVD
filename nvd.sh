@@ -34,7 +34,7 @@ else
 	do
 		resultsPerPage=$(grep -oE '"resultsPerPage":\s*(\d+)' $file | sed -E 's/"resultsPerPage":\s*//g')
 		if [ $resultsPerPage -lt 1000 ]; then
-			mv $file "nvd-${startIndex}-${resultsPerPage}.json"
+			mv $file "./nvd/nvd-${startIndex}-${resultsPerPage}.json"
 			break
 		fi
 
